@@ -10,6 +10,14 @@ app.use(cors());
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+app.use(
+    cors({
+      origin: ["https://test-livid-seven-65.vercel.app"],
+      methods: ['GET', 'POST', 'DELETE', 'PUT'],
+      credentials: true,
+    })
+  );
+
 // API route to handle form submission
 app.post("/submit", (req, res) => {
   const { name } = req.body;
