@@ -31,3 +31,10 @@ app.post("/submit", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.use("/", (req, res) => {
+    res.json({
+      status: "APi is working fine",
+      code: 200,
+    });
+  });
